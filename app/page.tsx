@@ -25,7 +25,7 @@ export default function Home() {
           </div>
           
            {/* Contact Information Section - Elegantly placed below CTA */}
-           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 pt-6 max-w-2xl max-sm:items-center">
+           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 pt-6 max-w-2xl max-sm:items-center border-t border-gray-300">
             <a href="mailto:yembukad@yahoo.com" className="flex items-center gap-3 group cursor-pointer">
               <div className="p-2.5 bg-[#FDFBF7] border border-[#C5A059]/50 rounded-full text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
                 <Mail size={18} />
