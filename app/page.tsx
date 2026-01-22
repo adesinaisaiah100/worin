@@ -10,7 +10,7 @@ export default function Home() {
         <div className="w-full flex max-sm:flex-col justify-between items-center">
         <div className="max-w-4xl flex flex-col gap-3 ">
           <h1 className="text-5xl md:text-7xl font-nunito font-bold leading-tight text-[#2E1A47#2E1A47]">
-            You Deserve <span className="text-[#feb10a] font-lobster">Empowerment.</span> You Need Recognition.
+            Woman <span className="text-[#feb10a] font-lobster">Empowerment.</span> Woman Recognition.
           </h1>
           <p className="text-lg max-md:text-sm font-nunito text-[#2E1A47]">When you need us, we are here with hearts and hands you can trust</p>
           <div>
