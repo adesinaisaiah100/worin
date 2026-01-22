@@ -6,18 +6,18 @@ export default function Home() {
     <main className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
       <div className="w-full p-2 h-screen flex flex-col relative">
       <Navbar />
-      <div className="absolute top-0 left-0 w-full h-full flex justify-between px-10 items-center">
-        <div className="w-full flex justify-between items-center">
+      <div className="sm:absolute top-0 left-0 w-full h-full sm:py-10 flex justify-between px-10 items-center max-sm:mt-15 max-sm:text-center">
+        <div className="w-full flex max-sm:flex-col justify-between items-center">
         <div className="max-w-4xl flex flex-col gap-3 ">
-          <h1 className="text-2xl md:text-7xl font-nunito font-bold leading-tight text-[#2E1A47#2E1A47]">
+          <h1 className="text-5xl md:text-7xl font-nunito font-bold leading-tight text-[#2E1A47#2E1A47]">
             You Deserve <span className="text-[#feb10a] font-lobster">Empowerment.</span> You Need Recognition.
           </h1>
-          <p className="text-lg font-nunito text-[#2E1A47]">When you need us, we are here with hearts and hands you can trust</p>
+          <p className="text-lg max-md:text-sm font-nunito text-[#2E1A47]">When you need us, we are here with hearts and hands you can trust</p>
           <div>
-             <div className=" text-sm italic text-gray-600 mb-10 mt-1">
+             <div className=" text-[11px] italic text-gray-600 mb-10 mt-1">
             Respect • Support • Encouragement • Dignity • Protection
           </div>
-            <button className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-2xl hover:bg-[#fbb00e] transition-colors mr-4">
+            <button className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-2xl hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5">
               Help
             </button>
             

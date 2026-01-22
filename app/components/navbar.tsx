@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className='hidden md:flex gap-8 items-center justify-end flex-1 bg-white/20 backdrop-blur-md border border-[#2E1A47]/10 rounded-full px-8 py-3 font-nunito ml-4'>
+        <div className='hidden md:flex gap-8 items-center justify-end flex-1 bg-white/20 backdrop-blur-md  rounded-full px-8 py-3 font-nunito ml-4'>
             <ul className="flex space-x-6">
                 <li><a href="#" className="text-[#2E1A47] hover:text-[#C5A059] transition-colors">Home</a></li>
                 <li><a href="#" className="text-[#2E1A47] hover:text-[#C5A059] transition-colors">About</a></li>
