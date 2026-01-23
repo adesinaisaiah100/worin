@@ -15,17 +15,17 @@ const Navbar = () => {
     <nav className="w-full flex justify-between items-center px-2 md:px-4">
         <div className="flex items-center gap-3 font-nunito">
             <div>
-                <Image src="/logo.png" alt="Logo" width={40} height={40} />
+                <Image src="/Womenlogo.jpeg" alt="Logo" width={60} height={60} />
             </div>            
-            <h2 className="ml-2 font-bold text-md md:text-2xl text-[#2E1A47] max-w-[200px] md:max-w-none leading-tight">Women Recognition For Leadership Development & Advancement Initiative.</h2>
+            <h2 className="ml-2 font-bold text-md md:text-2xl text-[#2E1A47]/80 max-w-[200px] md:max-w-none leading-tight">Women Recognition For Leadership Development & Advancement Initiative.</h2>
         </div>
 
         {/* Desktop Menu */}
         <div className='hidden md:flex gap-8 items-center justify-end flex-1 bg-white/20 backdrop-blur-md  rounded-full px-8 py-3 font-nunito ml-4'>
             <ul className="flex space-x-6">
-                <li><a href="#" className="text-[#2E1A47] hover:text-[#C5A059] transition-colors">Home</a></li>
-                <li><a href="#" className="text-[#2E1A47] hover:text-[#C5A059] transition-colors">About</a></li>
-                <li><a href="#" className="text-[#2E1A47] hover:text-[#C5A059] transition-colors">Contact Us</a></li>
+                <li><a href="#" className="text-[#2E1A47]/80 hover:text-[#C5A059] transition-colors">Home</a></li>
+                <li><a href="#" className="text-[#2E1A47]/80 hover:text-[#C5A059] transition-colors">About</a></li>
+                <li><a href="#" className="text-[#2E1A47]/80 hover:text-[#C5A059] transition-colors">Contact Us</a></li>
             </ul>
             <button className='px-8 py-2 bg-[#FFB81C] text-[#2E1A47] font-bold rounded-full hover:bg-[#2E1A47] hover:text-[#FDFBF7] transition-colors'>
                 Help
@@ -34,7 +34,7 @@ const Navbar = () => {
 
         {/* Mobile Hamburger Button */}
         <button 
-            className="md:hidden text-[#2E1A47] p-2 hover:bg-[#2E1A47]/10 rounded-full transition-colors"
+            className="md:hidden text-[#2E1A47]/80 p-2 hover:bg-[#2E1A47]/10 rounded-full transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
         >
