@@ -90,7 +90,7 @@ export default function Home() {
 
           <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
                <Image
-            src="/give3.jpeg"
+            src="/give2.jpeg"
             alt="Give Image"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"
