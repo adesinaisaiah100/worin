@@ -1,14 +1,36 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Navbar from "./components/navbar";
-import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Heart, Shield, Users, PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from 'react-responsive'
 
 export default function Home() {
 
-
   const isMobile = useMediaQuery({ maxWidth: 767 })
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400; // adjusts how far it scrolls
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'right' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const mediaItems = [
+    { type: 'video', src: '/videos/video1.mp4', title: 'Community Outreach', id: 1 },
+    { type: 'image', src: '/pic1.jpeg', title: 'Empowerment Moment', id: 1 },
+    { type: 'video', src: '/videos/video2.mp4', title: 'Support Network', id: 2 },
+    { type: 'image', src: '/pic2.jpeg', title: 'Community Support', id: 2 },
+    { type: 'video', src: '/videos/video3.mp4', title: 'Voices of Hope', id: 3 },
+    { type: 'image', src: '/pic3.jpeg', title: 'Women Helping Women', id: 3 },
+    { type: 'video', src: '/videos/video4.mp4', title: 'Building Future', id: 4 },
+    { type: 'image', src: '/pic4.jpeg', title: 'Joyful Moments', id: 4 },
+  ];
 
 
   return (
@@ -109,7 +131,114 @@ export default function Home() {
           </div>
         </div>
 
-  </section>
+      </section>
+
+      {/* --- HOW WE CAN HELP SECTION (Service) --- */}
+      <section className="w-full py-20 px-6 bg-[#FDFBF7]">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-16 items-center">
+          {/* Image Side */}
+          <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border-4 border-[#C5A059]/20 shadow-2xl">
+             <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
+               <Image src='/hands2.png' alt='Helping Hands' fill className="object-cover" />
+            </div>
+          </div>
+
+          {/* Content Side */}
+          <div className="w-full md:w-1/2 space-y-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#2E1A47] font-nunito">
+              How We Can Help
+            </h2>
+            <p className="text-xl text-gray-600 font-nunito leading-relaxed">
+              We provide a safe haven and a path forward. Our mission is to ensure every woman feels the strength of community.
+            </p>
+            
+            <div className="space-y-6">
+              {[
+                { icon: Heart, title: "Emotional Support", desc: "Counseling and a shoulder to lean on in tough times." },
+                { icon: Shield, title: "Protection & Safety", desc: "A secure environment where you can find peace." },
+                { icon: Users, title: "Community Reintegration", desc: "Helping you find your place and voice again." }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="p-3 bg-[#C5A059]/10 rounded-xl text-[#C5A059]">
+                    <item.icon size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#2E1A47]">{item.title}</h3>
+                    <p className="text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+
+          </div>
+        </div>
+      </section>
+
+      {/* --- MEDIA & IMPACT SECTION (Gallery) --- */}
+      <section className="w-full py-20 px-6 bg-[#2E1A47]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Journey in Motion</h2>
+            <p className="text-[#FDFBF7]/80 text-lg max-w-2xl mx-auto">See the lives changed and the moments shared.</p>
+          </div>
+
+          {/* Carousel Layout */}
+          <div className="relative group">
+            
+            {/* Left Button */}
+            <button 
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#C5A059] p-3 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -ml-4 md:-ml-8 hidden md:block"
+            >
+              <ChevronLeft size={32} />
+            </button>
+
+            {/* Scroll Container */}
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {mediaItems.map((item, index) => (
+                <div key={index} className="flex-shrink-0 w-[85vw] md:w-[450px] h-[600px] relative rounded-3xl overflow-hidden border-4 border-[#C5A059]/30 shadow-2xl snap-center bg-black">
+                   {item.type === 'video' ? (
+                     <div className="w-full h-full relative group">
+                        <video className="w-full h-full object-cover" controls>
+                            <source src={item.src} type="video/mp4" />
+                        </video>
+                        <div className="absolute top-4 left-4 bg-[#2E1A47]/80 px-4 py-1 rounded-full text-[#C5A059] font-bold text-sm backdrop-blur-sm border border-[#C5A059]/50">
+                          Video
+                        </div>
+                     </div>
+                   ) : (
+                     <div className="w-full h-full relative">
+                        <Image 
+                          src={item.src} 
+                          alt={item.title} 
+                          fill 
+                          className="object-cover"
+                        />
+                     </div>
+                   )}
+                   <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#2E1A47] to-transparent p-6 pt-20 pointer-events-none">
+                      <h3 className="text-white text-xl font-nunito font-bold">{item.title}</h3>
+                   </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Button */}
+            <button 
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#C5A059] p-3 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -mr-4 md:-mr-8 hidden md:block"
+            >
+              <ChevronRight size={32} />
+            </button>
+
+          </div>
+        </div>
+      </section>
      
       
     </main>
