@@ -189,7 +189,7 @@ export default function Home() {
             {/* Left Button */}
             <button 
               onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#C5A059] p-3 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -ml-4 md:-ml-8 hidden md:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 max-sm:p-1 z-20 bg-[#C5A059] p-3 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -ml-4 md:-ml-8 md:block"
             >
               <ChevronLeft size={32} />
             </button>
@@ -231,7 +231,7 @@ export default function Home() {
             {/* Right Button */}
             <button 
               onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#C5A059] p-3 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -mr-4 md:-mr-8 hidden md:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#C5A059] p-3 max-sm:p-1 rounded-full text-[#2E1A47] shadow-xl hover:bg-[#FDFBF7] transition-all -mr-4 md:-mr-8  md:block"
             >
               <ChevronRight size={32} />
             </button>
