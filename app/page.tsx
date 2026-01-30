@@ -3,6 +3,9 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Navbar from "./components/navbar";
+import Testimonials from "./components/testimonials";
+import CTA from "./components/cta";
+import Footer from "./components/footer";
 import { Mail, MapPin, ArrowRight, Heart, Shield, Users, PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from 'react-responsive'
 
@@ -239,7 +242,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-     
+      
+      <Testimonials />
+
+      <CTA />
+      
+      <Footer />
       
     </main>
   );
