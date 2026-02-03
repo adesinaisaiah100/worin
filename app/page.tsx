@@ -50,7 +50,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
+    <main id="home" className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
       <div className="w-full p-2 h-screen max-sm:h-auto flex flex-col relative">
       <Navbar />
       <div className="sm:absolute top-0 left-0 w-full h-full sm:py-10 flex justify-between px-10 items-center max-sm:mt-10 max-sm:text-center">
@@ -85,7 +85,7 @@ export default function Home() {
              </div>}
            {/* Contact Information Section - Elegantly placed below CTA */}
            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 pt-6 max-w-2xl max-sm:items-center border-t border-gray-300 mb-5">
-            <a href="mailto:yembukad@yahoo.com" className="flex items-center gap-3 group cursor-pointer">
+                <section id="about" className="w-full scroll-mt-24 py-20 px-6 bg-[#FDFBF7]">
               <div className="p-2.5 bg-[#FDFBF7] border border-[#C5A059]/50 rounded-full text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
                 <Mail size={18} />
               </div>
