@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import Testimonials from "./components/testimonials";
 import CTA from "./components/cta";
+import HelpForm from "./components/helpForm";
 import Footer from "./components/footer";
 import { Mail, MapPin, ArrowRight, Heart, Shield, Users, PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from 'react-responsive'
@@ -13,6 +14,18 @@ export default function Home() {
 
   const isMobile = useMediaQuery({ maxWidth: 767 })
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const helpFormAnchorRef = useRef<HTMLDivElement>(null);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
+
+  const openHelp = () => {
+    setIsHelpOpen(true);
+    // Wait for the form to render, then scroll smoothly.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        helpFormAnchorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  };
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -51,7 +64,11 @@ export default function Home() {
              <div className=" max-sm:text-[11px] sm:text-sm italic text-gray-600 mb-10 mt-1">
             Respect • Support • Encouragement • Dignity • Protection
           </div>
-            <button className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-2xl hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 ">
+            <button
+              type="button"
+              onClick={openHelp}
+              className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-full hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 "
+            >
               Help
             </button>
             
@@ -96,45 +113,7 @@ export default function Home() {
       </div>
        </div>
       </div>
-  <section className="w-full flex flex-col items-center py-10 px-5 h-auto bg-[#2e1a47] text-white">
-        <div>
-          <h1 className="text-3xl md:text-6xl font-nunito font-bold leading-tight text-center mt-6">
-            Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
-          </h1>
-        </div>
-                <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl px-4 mt-10 justify-between items-center">
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-             <Image
-              src="/give1.jpeg"
-              alt="Give Image"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give2.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give3.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-        </div>
-
-      </section>
+ 
 
       {/* --- HOW WE CAN HELP SECTION (Service) --- */}
       <section className="w-full py-20 px-6 bg-[#FDFBF7]">
@@ -244,9 +223,52 @@ export default function Home() {
       </section>
       
       <Testimonials />
+       <section className="w-full flex flex-col items-center py-10 px-5 h-auto bg-[#2e1a47] text-white">
+        <div>
+          <h1 className="text-3xl md:text-6xl font-nunito font-bold leading-tight text-center mt-6">
+            Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
+          </h1>
+        </div>
+                <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl px-4 mt-10 justify-between items-center">
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+             <Image
+              src="/give1.jpeg"
+              alt="Give Image"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          </div>
 
-      <CTA />
-      
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+               <Image
+            src="/give2.jpeg"
+            alt="Give Image"
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          </div>
+
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+               <Image
+            src="/give3.jpeg"
+            alt="Give Image"
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          </div>
+        </div>
+
+      </section>
+
+      <CTA onHelpClick={openHelp} />
+
+      <div ref={helpFormAnchorRef} className="w-full">
+        {isHelpOpen && <HelpForm onClose={() => setIsHelpOpen(false)} />}
+      </div>
+
       <Footer />
       
     </main>
