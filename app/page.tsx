@@ -50,7 +50,7 @@ export default function Home() {
 
 
   return (
-    <main id="home" className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
+    <main className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
       <div className="w-full p-2 h-screen max-sm:h-auto flex flex-col relative">
       <Navbar />
       <div className="sm:absolute top-0 left-0 w-full h-full sm:py-10 flex justify-between px-10 items-center max-sm:mt-10 max-sm:text-center">
@@ -64,11 +64,7 @@ export default function Home() {
              <div className=" max-sm:text-[11px] sm:text-sm italic text-gray-600 mb-10 mt-1">
             Respect • Support • Encouragement • Dignity • Protection
           </div>
-            <button
-              type="button"
-              onClick={openHelp}
-              className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-full hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 "
-            >
+            <button className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-full hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 ">
               Help
             </button>
             
@@ -85,7 +81,7 @@ export default function Home() {
              </div>}
            {/* Contact Information Section - Elegantly placed below CTA */}
            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 pt-6 max-w-2xl max-sm:items-center border-t border-gray-300 mb-5">
-                <section id="about" className="w-full scroll-mt-24 py-20 px-6 bg-[#FDFBF7]">
+            <a href="mailto:yembukad@yahoo.com" className="flex items-center gap-3 group cursor-pointer">
               <div className="p-2.5 bg-[#FDFBF7] border border-[#C5A059]/50 rounded-full text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
                 <Mail size={18} />
               </div>
@@ -116,7 +112,7 @@ export default function Home() {
  
 
       {/* --- HOW WE CAN HELP SECTION (Service) --- */}
-      <section className="w-full py-20 px-6 bg-[#FDFBF7]">
+      <section className="w-full py-20 px-6 bg-[#FDFBF7]" id="about">
         <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-16 items-center">
           {/* Image Side */}
           <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border-4 border-[#C5A059]/20 shadow-2xl">
