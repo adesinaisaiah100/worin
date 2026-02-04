@@ -14,7 +14,7 @@ export default function Testimonials() {
         rating: 5,
         quote:
           "From the very first visit, we knew our mum was in safe hands. The carers are kind, attentive, and treat her like family",
-        author: "Cao Yu",
+        author: "Helped Mother",
       },
       {
         kind: "video" as const,
