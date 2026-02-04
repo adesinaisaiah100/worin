@@ -7,7 +7,7 @@ import Testimonials from "./components/testimonials";
 import CTA from "./components/cta";
 import HelpForm from "./components/helpForm";
 import Footer from "./components/footer";
-import { Mail, MapPin, ArrowRight, Heart, Shield, Users, PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { Mail, MapPin, Heart, Shield, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from 'react-responsive'
 
 export default function Home() {
@@ -42,9 +42,7 @@ export default function Home() {
     { type: 'image', src: '/pic1.jpeg', title: 'Empowerment Moment', id: 1 },
     { type: 'video', src: '/videos/video2.mp4', title: 'Support Network', id: 2 },
     { type: 'image', src: '/pic2.jpeg', title: 'Community Support', id: 2 },
-    { type: 'video', src: '/videos/video3.mp4', title: 'Voices of Hope', id: 3 },
     { type: 'image', src: '/pic3.jpeg', title: 'Women Helping Women', id: 3 },
-    { type: 'video', src: '/videos/video4.mp4', title: 'Building Future', id: 4 },
     { type: 'image', src: '/pic4.jpeg', title: 'Joyful Moments', id: 4 },
   ];
 
@@ -152,6 +150,49 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <Testimonials />
+       <section className="w-full flex flex-col items-center py-10 px-5 h-auto bg-[#2e1a47] text-white">
+        <div>
+          <h1 className="text-3xl md:text-6xl font-nunito font-bold leading-tight text-center mt-6">
+            Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
+          </h1>
+        </div>
+                <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl px-4 mt-10 justify-between items-center">
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+             <Image
+              src="/give1.jpeg"
+              alt="Give Image"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          </div>
+
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+               <Image
+            src="/give2.jpeg"
+            alt="Give Image"
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          </div>
+
+          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
+               <Image
+            src="/give3.jpeg"
+            alt="Give Image"
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          </div>
+        </div>
+
+      </section>
+
+      <CTA onHelpClick={openHelp} />
 
       {/* --- MEDIA & IMPACT SECTION (Gallery) --- */}
       <section className="w-full py-20 px-6 bg-[#2E1A47]">
@@ -217,49 +258,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <Testimonials />
-       <section className="w-full flex flex-col items-center py-10 px-5 h-auto bg-[#2e1a47] text-white">
-        <div>
-          <h1 className="text-3xl md:text-6xl font-nunito font-bold leading-tight text-center mt-6">
-            Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
-          </h1>
-        </div>
-                <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl px-4 mt-10 justify-between items-center">
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-             <Image
-              src="/give1.jpeg"
-              alt="Give Image"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give2.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give3.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-        </div>
-
-      </section>
-
-      <CTA onHelpClick={openHelp} />
 
       <div ref={helpFormAnchorRef} className="w-full">
         {isHelpOpen && <HelpForm onClose={() => setIsHelpOpen(false)} />}

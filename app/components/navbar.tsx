@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
   <header className='w-full  flex p-2 justify-center items-center relative z-50'>
-    <nav className="w-full relative flex justify-start items-center px-2 md:px-4">
+    <nav className="w-full relative flex justify-between items-center px-2 md:px-4">
         <div className="flex items-center gap-3 font-nunito">
             <div>
                 <Image src="/Womenlogo.jpeg" alt="Logo" width={60} height={60} />
