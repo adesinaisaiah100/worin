@@ -122,7 +122,7 @@ export default function Home() {
           {/* Content Side */}
           <div className="w-full md:w-1/2 space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-[#2E1A47] font-nunito">
-              How We Can Help
+              How Can We Help
             </h2>
             <p className="text-xl text-gray-600 font-nunito leading-relaxed">
               We provide a safe haven and a path forward. Our mission is to ensure every woman feels the strength of community.
