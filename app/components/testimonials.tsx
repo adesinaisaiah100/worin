@@ -35,8 +35,36 @@ export default function Testimonials() {
           "You didn’t just donate — you connected with the children, listened, and brought hope. That kindness stays with them.",
         author: "Community Volunteer",
         subText: "Orphanage visit • Presence, love, and support",
+      },      {
+        kind: "image" as const,
+        mediaSrc: "/give1.jpeg",
+        mediaAlt: "Giving to women",
+        rating: 5,
+        quote:
+          "The generosity and compassion shown to these women was truly heartwarming. Every gift made a difference.",
+        author: "Beneficiary",
+        subText: "Community giving • Support for women",
       },
-    ],
+      {
+        kind: "image" as const,
+        mediaSrc: "/give2.jpeg",
+        mediaAlt: "Supporting women",
+        rating: 5,
+        quote:
+          "Being part of this initiative changed my perspective. Seeing women receive help with such dignity was inspiring.",
+        author: "Volunteer",
+        subText: "Women support • Dignity in giving",
+      },
+      {
+        kind: "image" as const,
+        mediaSrc: "/give3.jpeg",
+        mediaAlt: "Women empowerment",
+        rating: 5,
+        quote:
+          "This organization truly understands what women need — not just help, but recognition and respect.",
+        author: "Community Member",
+        subText: "Empowerment • Recognition",
+      },    ],
     []
   );
 

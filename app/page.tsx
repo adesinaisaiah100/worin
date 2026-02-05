@@ -152,51 +152,17 @@ export default function Home() {
       </section>
       
       <Testimonials />
-       <section className="w-full flex flex-col items-center py-10 px-5 h-auto bg-[#2e1a47] text-white">
-        <div>
-          <h1 className="text-3xl md:text-6xl font-nunito font-bold leading-tight text-center mt-6">
-            Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
-          </h1>
-        </div>
-                <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl px-4 mt-10 justify-between items-center">
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-             <Image
-              src="/give1.jpeg"
-              alt="Give Image"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give2.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-
-          <div className="relative w-full md:w-1/3 aspect-[3/4] rounded-2xl border-4 border-[#C5A059] overflow-hidden shadow-xl shrink-0">
-               <Image
-            src="/give3.jpeg"
-            alt="Give Image"
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          </div>
-        </div>
-
-      </section>
 
       <CTA onHelpClick={openHelp} />
 
       {/* --- MEDIA & IMPACT SECTION (Gallery) --- */}
       <section className="w-full py-20 px-6 bg-[#2E1A47]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">          {/* Recognition Statement */}
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-5xl font-nunito font-bold leading-tight text-white mb-12">
+              Women need recognition, not just empowerment, but respect, support, encouragement, dignity, and protection.
+            </h1>
+          </div>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Journey in Motion</h2>
             <p className="text-[#FDFBF7]/80 text-lg max-w-2xl mx-auto">See the lives changed and the moments shared.</p>
