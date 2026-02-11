@@ -13,7 +13,7 @@ export default function Testimonials() {
         mediaAlt: "Testimonial",
         rating: 5,
         quote:
-          "From the very first visit, we knew our mum was in safe hands. The carers are kind, attentive, and treat her like family",
+          "I was struggling to make ends meet, Women Recognition was very helpful, from the time I’ve met them, things have changed for better for me and my children’. They donated a brand new big deep freezer to my shop to help with my business.",
         author: "Helped Mother",
       },
       {
