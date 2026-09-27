@@ -51,7 +51,7 @@ export async function POST(req: Request) {
 
   const resend = new Resend(resendApiKey);
 
-  const toAddress = process.env.HELP_TO_EMAIL ?? "yembukad@yahoo.com";
+  const toAddress = process.env.HELP_TO_EMAIL ?? "yembukad@womenrecognition.ng";
   const fromAddress =
     process.env.HELP_FROM_EMAIL ?? "WORIN Help <onboarding@resend.dev>";
 

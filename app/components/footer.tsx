@@ -31,11 +31,11 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="font-bold text-[#C5A059] text-xl">Contact Us</h4>
           <div className="flex flex-col gap-3">
-            <a href="mailto:info@worin.org" className="flex items-center gap-2 hover:text-[#FFB81C] transition-colors group">
+            <a href="mailto:yembukad@womenrecognition.ng" className="flex items-center gap-2 hover:text-[#FFB81C] transition-colors group">
               <div className="p-2 bg-[#2E1A47]/10 rounded-full group-hover:bg-[#FFB81C] group-hover:text-[#2E1A47] transition-all">
                 <Mail size={18} />
               </div>
-              <span>yembukad@yahoo.com</span>
+              <span>yembukad@womenrecognition.ng</span>
             </a>
             <a href="https://wa.me/+2349036323604" className="flex items-center gap-2 hover:text-[#FFB81C] transition-colors group">
               <div className="p-2 bg-[#2E1A47]/10 rounded-full group-hover:bg-[#FFB81C] group-hover:text-[#2E1A47] transition-all">

@@ -48,7 +48,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito">
+    <main id="home" className="flex bg-[#FDFBF7] min-h-screen flex-col items-center font-nunito scroll-mt-0">
       <div className="w-full p-2 h-screen max-sm:h-auto flex flex-col relative">
       <Navbar />
       <div className="sm:absolute top-0 left-0 w-full h-full sm:py-10 flex justify-between px-10 items-center max-sm:mt-10 max-sm:text-center">
@@ -62,13 +62,17 @@ export default function Home() {
              <div className=" max-sm:text-[11px] sm:text-sm italic text-gray-600 mb-10 mt-1">
             Respect • Support • Encouragement • Dignity • Protection
           </div>
-            <button className="w-45 font-nunito  h-12 mt-2 bg-[#FFB81C] rounded-full hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 ">
+            <button 
+              type="button"
+              onClick={openHelp}
+              className="w-45 font-nunito h-12 mt-2 bg-[#FFB81C] text-[#2E1A47] font-bold rounded-full hover:bg-[#fbb00e] transition-colors mr-4 max-sm:mb-5 shadow cursor-pointer"
+            >
               Help
             </button>
             
           </div>
            { isMobile &&
-               <div className="relative w-full max-w-md h-[380px] md:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/80 ring-1 ring-gray-100/50  hover:rotate-0 transition-transform duration-500">
+               <div className="relative w-full max-w-md h-[380px] md:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/80 ring-1 ring-gray-100/50 hover:rotate-0 transition-transform duration-500">
                 <Image
                   src="/woman_pic.png"
                   alt="Empowered Woman"
@@ -79,11 +83,11 @@ export default function Home() {
              </div>}
            {/* Contact Information Section - Elegantly placed below CTA */}
            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 pt-6 max-w-2xl max-sm:items-center border-t border-gray-300 mb-5">
-            <a href="mailto:yembukad@yahoo.com" className="flex items-center gap-3 group cursor-pointer">
+            <a href="mailto:yembukad@womenrecognition.ng" className="flex items-center gap-3 group cursor-pointer">
               <div className="p-2.5 bg-[#FDFBF7] border border-[#C5A059]/50 rounded-full text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
                 <Mail size={18} />
               </div>
-              <span className="text-sm font-nunito font-bold text-[#2E1A47]/80 group-hover:text-[#2E1A47] transition-colors">yembukad@yahoo.com</span>
+              <span className="text-sm font-nunito font-bold text-[#2E1A47]/80 group-hover:text-[#2E1A47] transition-colors">yembukad@womenrecognition.ng</span>
             </a>
              <div className="flex items-center gap-3 group cursor-pointer">
               <div className="p-2.5 bg-[#FDFBF7] border border-[#C5A059]/50 rounded-full text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
@@ -189,7 +193,7 @@ export default function Home() {
                 <div key={index} className="flex-shrink-0 w-[85vw] md:w-[450px] h-[600px] relative rounded-3xl overflow-hidden border-4 border-[#C5A059]/30 shadow-2xl snap-center bg-black">
                    {item.type === 'video' ? (
                      <div className="w-full h-full relative group">
-                        <video className="w-full h-full object-cover" controls>
+                        <video className="w-full h-full object-cover" controls preload="metadata" playsInline>
                             <source src={item.src} type="video/mp4" />
                         </video>
                         <div className="absolute top-4 left-4 bg-[#2E1A47]/80 px-4 py-1 rounded-full text-[#C5A059] font-bold text-sm backdrop-blur-sm border border-[#C5A059]/50">
